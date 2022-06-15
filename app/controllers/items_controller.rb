@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
   def index
-    url = "https://api.spoonacular.com/food/ingredients/search?query=apple"
+    url = "https://api.spoonacular.com/food/ingredients/search"
     headers = {
-      "x-api-key" => ENV["api-key"] 
+      "x-api-key" => ENV["api-key"],
+      params: {query: params[:query]}
     }
-    resposne = RestClient.get(url, headers)
-    render json: resposne
+    response = RestClient.get(url, headers)
+    render json: response
   end
 end
