@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get "/items" => "items#index"
   # Lists
   get "/lists" => "lists#index"
-
+  post "/lists" => "lists#create"
 
 end
