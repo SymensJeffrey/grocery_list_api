@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_21_223035) do
+ActiveRecord::Schema.define(version: 2022_06_21_233357) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -19,9 +19,7 @@ ActiveRecord::Schema.define(version: 2022_06_21_223035) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "lists", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+# Could not dump table "lists" because of following StandardError
+#   Unknown type 'array' for column 'items'
 
 end
