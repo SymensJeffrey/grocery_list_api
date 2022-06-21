@@ -1,8 +1,8 @@
 class ListsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
-    list = List.all 
-    render json: list.as_json
+    lists = List.all 
+    render json: lists.as_json
   end
 
   def create
