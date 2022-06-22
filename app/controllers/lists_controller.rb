@@ -15,4 +15,11 @@ class ListsController < ApplicationController
       render json: { errors: list.errors.full_messages }, status: :bad_request
     end
   end
+
+  def update
+    list = List.find_by(id:params[:id])
+    list.items << item 
+    list.save
+    render json: list.as_json
+  end
 end

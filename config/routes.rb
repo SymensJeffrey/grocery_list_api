@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # Lists
   get "/lists" => "lists#index"
   post "/lists" => "lists#create"
-
+  patch "/lists/:id" => "lists#update"
 end
