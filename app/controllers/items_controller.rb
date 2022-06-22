@@ -8,4 +8,15 @@ class ItemsController < ApplicationController
     response = RestClient.get(url, headers)
     render json: response
   end
+
+  def show
+    id = params[:id]
+    url = "https://api.spoonacular.com/food/ingredients/#{id}/information"
+    headers = {
+      "x-api-key" => ENV["api-key"],
+      params: {}
+    }
+    response = RestClient.get(url, headers)
+    render json: response
+  end
 end
