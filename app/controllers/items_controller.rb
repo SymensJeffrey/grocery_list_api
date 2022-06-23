@@ -16,7 +16,11 @@ class ItemsController < ApplicationController
       "x-api-key" => ENV["api-key"],
       params: {}
     }
-    response = RestClient.get(url, headers)
-    render json: response
+    response = JSON.parse(RestClient.get(url, headers))
+    render json: {
+      'ID' => response['id'],
+      'Name' => response['name']
+
+    }
   end
 end
